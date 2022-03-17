@@ -48,10 +48,9 @@ def credentials_handler(
             username = input("Type your INAZ username: ")
             password = input("Type your INAZ password: ")
             print(
-                "To find the executable you have to navigate the file explorer. The usual location is under either 'C:/Program Files/' or 'C:/Users/morom/AppData/Local/.\n\
-                In case of a custom location you have to figure it out by yourself :)"
+                "\nTo find the executable you have to navigate the file explorer. The usual location is under either 'C:/Program Files/' or 'C:/Users/morom/AppData/Local/. In case of a custom location you have to figure it out by yourself :)\n"
             )
-            browser_path = input("Place here your chrome.exe or brave.exe file")
+            browser_path = input("Place here your chrome.exe or brave.exe file: ")
             f.write(username + "\n")
             f.write(password + "\n")
             f.write(browser_path)
@@ -195,10 +194,10 @@ def links_extractor(file_path: str = LINKS_FILE) -> List[str]:
     It reads a csv file and return a list of its content
 
     Args:
-        file_path (str): _description_
+        file_path (str): path to file containing the links
 
     Returns:
-        List[str]: _description_
+        List[str]: the links of the file as a list
     """
     csv = pd.read_csv(file_path, sep=",")
     return csv["url"].values.tolist()
