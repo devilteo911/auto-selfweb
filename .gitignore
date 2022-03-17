@@ -1,0 +1,8 @@
+output/
+venv/
+__pycache__/
+.vscode/
+
+chromedriver*
+credentials.txt
+links.csv
